@@ -43,6 +43,12 @@ jobs:
 
       - name: ECR login
         run: aws ecr get-login-password | docker login --username AWS --password-stdin 867344449424.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test
+     
+      - name: Container build
+        run: docker build -t ${{ env.ECR_URL }} .
+        
+      - name: Container Push
+        run : docker push ${{ env.ECR_URL }}        
 
   CD:
     name: Deploy
