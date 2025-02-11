@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - develop
+      
 env:
   AWS_REGION: ap-northeast-2
   ECR_URL: 867344449424.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test:shw
